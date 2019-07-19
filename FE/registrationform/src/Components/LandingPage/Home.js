@@ -5,12 +5,13 @@ import Map from './Map'
 import axios from "axios";
 
 import styled from "styled-components"
+import AxiosWithAuth from "./AxiosWithAuth"
 
 const Sap = styled.div`
 font-family: sans-serif;
 text-align: center;
 height: 100%;
-background-image: url("https://us.123rf.com/450wm/regioeligo/regioeligo1701/regioeligo170100053/69597010-stock-vector-vector-abstract-background-with-open-space-star-warp-or-hyperspace-travel-big-bang-illustration-.jpg?ver=6");
+background-image: url("https://images.unsplash.com/photo-1535498730771-e735b998cd64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
 background-size: cover;
 background-position: center center;
 background-repeat: none;`
@@ -20,32 +21,56 @@ const Home = () => {
   
   localStorage.getItem("token")
     const [data, setData] = useState({});
-    const [token, setToken] = useState(localStorage.getItem('token'))
+    
 localStorage.getItem('token')
     // useEffect(() => {
     //   setToken(localStorage.getItem('token'))
     //   console.log('test')
     // }, [token]);
-
-    const fetchData = () => {
-      axios.get(`http://localhost:4000/api/restricted/data`)
-      .then(res => {
-        console.log(res.data);
-        setData(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    const [secretData, setSecretData] = useState([]);
+    function setRestricted(res) {
+      setSecretData(res);
     }
+    useEffect(() => {
+      AxiosWithAuth()
+        .get("http://localhost:4000/restricted/data")
+        .then(res => {
+          console.log(res);
+          setRestricted(res.data);
+        })
+        .catch(err => console.log(err));
+    }, []);
+    // const fetchData = () => {
+    //   axios.get(`http://localhost:4000/api/restricted/data`)
+    //   .then(res => {
+    //     console.log(res.data);
+    //     setData(res.data);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
+    // }
   
-    useEffect(fetchData, [localStorage.getItem('token')]);
+    // useEffect(fetchData, [localStorage.getItem('token')]);
   console.log(data,"data")
 
   return(
     <div>
  <Sap className="App">
-         
-         <Map data={data} />
+         <h1>Private route</h1>
+         <Map data={secretData} />
+         <div>
+          {secretData.map(food => (
+              <div>
+                <h2>Name:{food.name}</h2>
+                <p>Course:{food.course}</p>
+                <div>
+                  Technique: {food.technique}
+                </div>
+              
+            </div>
+          ))}
+        </div>
         
 
        </Sap>

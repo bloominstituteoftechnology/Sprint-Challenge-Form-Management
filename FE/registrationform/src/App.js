@@ -13,7 +13,7 @@ function App() {
     console.log('test')
   }, [token]);
 
-  console.log('Token u there brother?: ', token);
+  // console.log('Token u there brother?: ', token);
 
   return (
     <div >
