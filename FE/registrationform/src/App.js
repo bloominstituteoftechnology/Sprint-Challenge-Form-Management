@@ -4,7 +4,7 @@ import PrivateRoute from "./Components/SecretData/PrivateRoute"
 
 import Login from './Components/Login/Login'
 
-import LandingPage from './Components/LandingPage/LandingPage'
+import Home from './Components/LandingPage/Home'
 function App() {
   const [token, setToken] = useState(null)
 
@@ -20,7 +20,7 @@ function App() {
       <header >
         <h1>React app</h1>
         <Link  to='/'>
-          Home
+          LandingPage
         </Link>
         {token === null ? (
           <Link to='/login'>
@@ -37,7 +37,7 @@ function App() {
         )}
       </header>
       <div>
-        <PrivateRoute exact path='/' component={LandingPage} />
+        <PrivateRoute exact path='/' component={Home} />
         <Route exact path='/login' render={(props) => <Login {...props} setToken={setToken} />} />
       </div>
     </div>
