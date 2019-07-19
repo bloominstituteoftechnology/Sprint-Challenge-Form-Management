@@ -37,7 +37,7 @@ function App() {
         )}
       </header>
       <div>
-        <PrivateRoute exact path='/' component={Home} />
+        <PrivateRoute exact path='/' component={Home} token ={token} />
         <Route exact path='/login' render={(props) => <Login {...props} setToken={setToken} />} />
       </div>
     </div>

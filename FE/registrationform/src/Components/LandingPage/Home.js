@@ -18,8 +18,14 @@ background-repeat: none;`
 const Home = () => {
   // const [starwarsChars, setChars] = useState()
   
-  
+  localStorage.getItem("token")
     const [data, setData] = useState({});
+    const [token, setToken] = useState(localStorage.getItem('token'))
+localStorage.getItem('token')
+    // useEffect(() => {
+    //   setToken(localStorage.getItem('token'))
+    //   console.log('test')
+    // }, [token]);
 
     const fetchData = () => {
       axios.get(`http://localhost:4000/api/restricted/data`)
@@ -32,7 +38,7 @@ const Home = () => {
       })
     }
   
-    useEffect(fetchData, []);
+    useEffect(fetchData, [localStorage.getItem('token')]);
   console.log(data,"data")
 
   return(

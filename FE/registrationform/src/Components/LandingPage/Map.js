@@ -6,8 +6,8 @@ function Map(props){
     }
     return (
         <div>
-{props.data && props.data.map(ele => {
-     return <Items data ={ele}/> 
+{//props.data && props.data.map(ele => {
+     // return <Items data ={ele}/> 
  })}
 
         </div>
