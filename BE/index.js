@@ -19,7 +19,7 @@ server.use("/api/restricted", restrictedRoutes);
 
 server.use(errorHandler);
 
-const port = 6000;
+const port = 5000;
 server.listen(port, function() {
 	console.log(`\n === Web API Listening on http://localhost:${port}===`);
 });
