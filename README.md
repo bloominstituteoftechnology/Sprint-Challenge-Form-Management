@@ -38,30 +38,30 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo. **(Not Lambda's by mistake!)**
-- [ ] Create a new Branch locally: `git checkout -b <firstName-lastName>`.
+- [X] Create a forked copy of this project.
+- [X] Add PM as collaborator on Github.
+- [X] Clone your OWN version of Repo. **(Not Lambda's by mistake!)**
+- [X] Create a new Branch locally: `git checkout -b <firstName-lastName>`.
 
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
-- [ ] Navigate to the BE folder in this repository (this is where your server is located) from the command line, install the dependencies, and run `yarn start` or `npm start` to spin up the server provided for you.
-- [ ] In the terminal, navigate back to the main folder, then into the `client` folder.
-- [ ] Create your React app here.
+- [X] Implement the project on this Branch, **committing progress & changes often.**
+- [X] Push commits: `git push origin <firstName-lastName>`.
+- [X] Navigate to the BE folder in this repository (this is where your server is located) from the command line, install the dependencies, and run `yarn start` or `npm start` to spin up the server provided for you.
+- [X] In the terminal, navigate back to the main folder, then into the `client` folder.
+- [X] Create your React app here.
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
-- [ ] Add your Project Manager as a Reviewer on the Pull-request.
-- [ ] PM then will count the HW as done by merging the branch back into master.
+- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
+- [X] Add your Project Manager as a Reviewer on the Pull-request.
+- [X] PM then will count the HW as done by merging the branch back into master.
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-- [ ] A registration form built with formik - include inputs for a `username` and a `password`
-- [ ] Form validation using Yup
-- [ ] A POST request made from the registration form to `http://localhost:6000/api/register` to add a user and retrieve a token - the request body should have the following shape:
+- [X] A registration form built with formik - include inputs for a `username` and a `password`
+- [X] Form validation using Yup
+- [X] A POST request made from the registration form to `http://localhost:5000/api/register` to add a user and retrieve a token - the request body should have the following shape:
 
 ```js
 {
@@ -80,11 +80,11 @@ and the response object will look like this:
 }
 ```
 
-- [ ] Write a custom hook that can set and retrieve this token to and from local storage
+- [X] Write a custom hook that can set and retrieve this token to and from local storage
 
-- [ ] A GET request made with the token to `http://localhost:6000/api/restricted/data` to retrieve protected data
+- [X] A GET request made with the token to `http://localhost:5000/api/restricted/data` to retrieve protected data
 
-- [ ] Map over the array of objects you recieve and render some or all of it's information to the DOM.
+- [X] Map over the array of objects you recieve and render some or all of it's information to the DOM.
 
 ## Stretch Problems
 
