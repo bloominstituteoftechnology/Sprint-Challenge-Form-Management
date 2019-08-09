@@ -1,12 +1,14 @@
-// import React from "react";
+import React from "react";
+import { Card } from "semantic-ui-react";
 
-// export default function DataCard({ tasty }) {
-//   return (
-//     <div>
-//       <h1>food stuff</h1>
-//       <h2>{tasty.course}</h2>
-//       <h2>{tasty.name}</h2>
-//       <h2>{tasty.technique}</h2>
-//     </div>
-//   );
-// }
+export default function DataCard({ foo }) {
+  return (
+    <Card>
+      <Card.Content>
+        <Card.Header>{foo.name}</Card.Header>
+        <Card.Meta>{foo.course}</Card.Meta>
+        <Card.Description>{foo.technique}</Card.Description>
+      </Card.Content>
+    </Card>
+  );
+}

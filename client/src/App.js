@@ -9,6 +9,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Sprint John!!!!!</h1>
         <SprintForm />
+        <DataFetch />
       </div>
     );
   }

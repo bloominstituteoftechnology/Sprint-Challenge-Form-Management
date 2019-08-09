@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-const SprintForm = ({ errors, touched, values, handleSubmit, status }) => {
-  const [users, setUsers] = useState([]);
-  console.log("checkDaState:", users);
-
-  useEffect(() => {
-    if (status) {
-      setUsers([...users, values]);
-    }
-  }, [status]);
-
+const SprintForm = ({ errors, touched }) => {
   return (
     <div className="form-container">
       <h1>Form Stuff!</h1>
@@ -20,8 +11,8 @@ const SprintForm = ({ errors, touched, values, handleSubmit, status }) => {
         <label>
           UserName
           <Field type="text" name="username" placeholder="UserName" />
-          {touched.name && errors.name && (
-            <p className="error">{errors.name}</p>
+          {touched.username && errors.username && (
+            <p className="error">{errors.username}</p>
           )}
         </label>
         <label>
@@ -34,12 +25,6 @@ const SprintForm = ({ errors, touched, values, handleSubmit, status }) => {
 
         <button type="submit">Submit</button>
       </Form>
-      <div className="new-users">
-        <h2>New Users</h2>
-        {users.map(item => {
-          return <p>{item.username}</p>;
-        })}
-      </div>
     </div>
   );
 };
@@ -57,22 +42,13 @@ const FormikSprintForm = withFormik({
     password: Yup.string().required("must submit to requirements")
   }),
 
-  handleSubmit(values, { setStatus }) {
+  handleSubmit() {
     axios
-      .post("http://localhost:5000/api/register", values)
+      .post("http://localhost:5000/api/register")
       .then(res => {
         console.log("test 12:", res.data);
       })
       .catch(err => console.error(err.response));
-    axios
-      .get("http://localhost:5000/api/restricted/data")
-      .then(res => {
-        setStatus(res.data);
-        console.log("test 12b:", res.data);
-      })
-      .catch(err => {
-        console.error(err);
-      });
   }
 })(SprintForm);
 
