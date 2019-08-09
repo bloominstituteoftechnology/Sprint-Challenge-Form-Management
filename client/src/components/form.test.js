@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, wait } from '@testing-library/react';
 import "@testing-library/react/cleanup-after-each";
-import { FormikRegisterForm } from './components/form';
+import { FormikRegisterForm }  from './form';
 import '@testing-library/jest-dom/extend-expect';
 
 function setToken(token) {
