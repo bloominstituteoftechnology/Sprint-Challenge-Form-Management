@@ -20,14 +20,21 @@ Self-Study/Essay Questions
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
  What are the required parts of class components?
+ State, Lifecycle Methods, extends from React.Component
 
  Name at least three lifecycle methods?
+ Mounting, Updating, Unmounting
 
  Why are forms used so often in web applications and software?
+ Allows for easy user to database data processing. 
 
  What advantages are there by using a forms library like Formik?
 
+ Less code. Manages form state locally. 
+
  Why do we write tests for our apps?
+
+ Ensures the quality of what we are building.
 
 Project Set Up
 Follow these steps to set up and work on your project:
