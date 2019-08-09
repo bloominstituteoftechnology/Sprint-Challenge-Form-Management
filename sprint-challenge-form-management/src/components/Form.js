@@ -35,6 +35,7 @@ const UserForm = ({ errors, touched, values, status }) => {
     )
 }
 
+
 const FormikUserForm = withFormik({
     mapPropsToValues({ username, password }) {
         return {
@@ -54,7 +55,15 @@ const FormikUserForm = withFormik({
             setStatus(res.data);
           })
           .catch(err => console.log(err.response));
-      }
+      },
+    //   handleSubmit(values, { setStatus }) {
+    //     axios
+    //       .post('http://localhost:5000/api/restricted/data', values)
+    //       .then(res => {
+    //         setStatus(res.data);
+    //       })
+    //       .catch(err => console.log(err.response));
+    //     }
 
 
 })(UserForm);
