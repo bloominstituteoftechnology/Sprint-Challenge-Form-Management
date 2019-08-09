@@ -1,8 +1,8 @@
 import React from 'react';
 import {Router} from 'react-router-dom'
-import {Renderer} from 'react-dom'
 import App from './App';
 import {render, fireEvent, cleanup} from '@testing-library/react';
+import "@testing-library/jest-dom"
 import { createMemoryHistory } from 'history'
 import mockAxios from 'axios'
 
@@ -32,7 +32,7 @@ it('submits the form', async () => {
   const userInput = getByPlaceholderText('UserName');
   userInput.nodeValue = "bharti"
   const userPassword = getByPlaceholderText('Password');
-  userInput.nodeValue = "password"
+  userPassword.nodeValue = "password"
 
   mockAxios.post.mockImplementationOnce(() =>
   Promise.resolve({

@@ -7,12 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale; 
   background-color:	rgb(56,56,56);
 } 
-#lableOne , #lableTwo {
+#lableOne , #lableTwo, #lableFour {
   color: aliceblue;
   text-align: left;
 }  
   
-#message , #messageOne, #header{
+#message , #messageOne, #header , #buttonId{
   color: white;
 }
 
