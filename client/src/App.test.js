@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { render } from "@testing-library/react";
+import * as rtl from "@testing-library/react";
 import "@testing-library/react/cleanup-after-each";
-import "jest-dom/extend-expect";
+import "@testing-library/jest-dom/extend-expect";
 
 afterEach(rtl.cleanup);
 
 describe("<App />", () => {
   it("renders without crashing", () => {
-    render(<App />);
+    rtl.render(<App />);
   });
 });

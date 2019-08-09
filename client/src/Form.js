@@ -54,9 +54,9 @@ const FormikRegForm = withFormik({
   validationSchema: Yup.object().shape({
     username: Yup.string().required("Username is required"),
     password: Yup.string()
-      .min(6)
+      .min(6, "Password needs to be longer than 6 characters.")
       .required("Password is required"),
-    terms: Yup.boolean().required("Agreeing to Terms is required")
+    terms: Yup.bool().required("Agreeing to Terms is required")
   }),
 
   handleSubmit(values, { resetForm, setStatus }) {
