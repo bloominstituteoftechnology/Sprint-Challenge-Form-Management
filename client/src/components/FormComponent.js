@@ -13,21 +13,21 @@ class FormComponent extends React.Component {
     render() {
         return (
             <Form>
-                <Field type="text" name="username" placeholder="Username" />
+                <Field type="text" name="email" placeholder="email" />
                 {this.props.touched.email && this.props.errors.email && <p>{this.props.errors.email}</p>}
 
                 <Field type="password" name="password" placeholder="Password" />
                 {this.props.touched.password && this.props.errors.password && <p>{this.props.errors.password}</p>}
-                <button>Submit!</button>
+                <button type="submit">Submit!</button>
             </Form>
         )
     }
 }
 const FormikForm = withFormik({
 
-    mapPropsToValues({ username, password }) {
+    mapPropsToValues({ email, password }) {
         return {
-            username: username || "",
+            email: email || "",
             password: password || ""
         };
     },
@@ -43,15 +43,24 @@ const FormikForm = withFormik({
 
     handleSubmit(values) {
         console.log(values)
+        // axios
+        //     .post("http://localhost:5000/api/register", values)
+        //     .then(res => {
+        //         console.log(res.data);
+        //         this.setState(res.data);
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     });
         axios
-            .post("http://localhost:5000/api/register", values)
+            .get("http://localhost:5000/api/restricted/data")
             .then(res => {
                 console.log(res.data);
                 this.setState(res.data);
             })
             .catch(err => {
                 console.log(err);
-            });
+            })
     }
 
 })(FormComponent);
