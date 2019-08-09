@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
 import SprintForm from "./components/SprintForm";
+import DataFetch from "./components/DataFetch";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Sprint John!!!!!</h1>
-      <SprintForm />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Sprint John!!!!!</h1>
+        <SprintForm />
+      </div>
+    );
+  }
 }
 
 export default App;
