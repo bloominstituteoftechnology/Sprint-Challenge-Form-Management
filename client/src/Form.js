@@ -7,14 +7,16 @@ function RegForm({ values, errors, touched }) {
   return (
     <Form>
       <div>
-        {touched.name && errors.name && <p className="error">{errors.name}</p>}
-        <Field type="text" name="username" placeholder="Username" />
+        {touched.username && errors.username && (
+          <p className="error">{errors.username}</p>
+        )}
+        <Field type="text" name="username" placeholder="Username*" />
       </div>
       <div>
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <Field type="password" name="password" placeholder="Password" />
+        <Field type="password" name="password" placeholder="Password*" />
       </div>
       <div className="home">
         <h3>Where do you live?</h3>
@@ -31,17 +33,18 @@ function RegForm({ values, errors, touched }) {
           name="terms"
           checked={values.terms}
         />
-        Terms of Service
+        Terms of Service*
       </label>
+      <h4>* fields are required</h4>
       <button type="submit">Submit</button>
     </Form>
   );
 }
 
 const FormikRegForm = withFormik({
-  mapPropsToValues({ name, password, terms, home }) {
+  mapPropsToValues({ username, password, terms, home }) {
     return {
-      name: name || "",
+      username: username || "",
       password: password || "",
       terms: terms || false,
       home: home || "usa"
@@ -49,20 +52,17 @@ const FormikRegForm = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    name: Yup.string().required("Username is required"),
-    email: Yup.string()
-      .email("Email not valid")
-      .required("Email is required"),
+    username: Yup.string().required("Username is required"),
     password: Yup.string()
       .min(6)
       .required("Password is required"),
-    terms: Yup.boolean().required()
+    terms: Yup.boolean().required("Agreeing to Terms is required")
   }),
 
   handleSubmit(values, { resetForm, setStatus }) {
     console.log(values);
     axios
-      .post("https://reqres.in/api/users/", values)
+      .post("http://localhost:5000/api/register", values)
       .then(response => {
         console.log(response.data);
         setStatus(response.data);
