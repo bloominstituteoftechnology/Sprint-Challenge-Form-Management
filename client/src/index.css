@@ -4,8 +4,25 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+  background-color:	rgb(56,56,56);
+} 
+#lableOne , #lableTwo {
+  color: aliceblue;
+  text-align: left;
+}  
+  
+#message , #messageOne, #header{
+  color: white;
 }
+
+.field{
+  width: 300px;
+} 
+#formikForm{
+  margin-left: 35%;;
+  margin-top:1%;
+} 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

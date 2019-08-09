@@ -13,15 +13,15 @@ class RegisterationForm extends React.Component {
   render() {
     const { values ,errors, touched, isSubmitting} = this.props;
     return(
-        <Form className="ui form">
+        <Form className="ui form" id = "formikForm">
         <div className="field">
         <label id="lableOne">UserName</label>
-        {touched.username && errors.username && <p>{errors.username}</p>}
+        {touched.username && errors.username && <p id = "message">{errors.username}</p>}
         <Field type="text" name="username" placeholder="UserName" />
         </div>
         <div className="field">
-          <label id="lableThree">Password</label>
-          {touched.password && errors.password && <p>{errors.password}</p>}
+          <label id="lableTwo">Password</label>
+          {touched.password && errors.password && <p id = "messageOne">{errors.password}</p>}
           <Field type="password" name="password" placeholder="Password"/>
         </div>
         <div className="field">

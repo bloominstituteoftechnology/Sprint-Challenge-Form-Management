@@ -6,8 +6,8 @@ import UserRegisterationForm from './Component/RegisterationForm'
 function App() {
   return (
     <div className="App">
-      <h1>Register</h1>
-      <UserRegisterationForm />
+      <h1 id = "header">Register</h1>
+      <UserRegisterationForm data-testid="userForm" />
     </div>
   );
 }
