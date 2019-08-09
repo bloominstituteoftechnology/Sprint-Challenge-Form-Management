@@ -8,9 +8,9 @@
 
 - [ ] Name at least three lifecycle methods?
 
-    Render
+    componentUnmount
     componentDidMount
-    Constructor
+    componentWillMount
 
 - [ ] Why are forms used so often in web applications and software?
 
