@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
 
 import FormikForm from './components/InputForm'
+import FoodCard from './components/FoodCard'
 
 function App() {
-  const [users, setUsers] = useState([])
+  const [foods, setFoods] = useState([])
 
   return (
     <div>
-      <FormikForm users={users} setUsers={setUsers}/>
+      <FormikForm foods={foods} setFoods={setFoods}/>
+
+      <div>
+        {foods.map(food => (
+          <FoodCard key={Date.now()} food={food} />
+        ))}
+      </div>
     </div>
   )
 }

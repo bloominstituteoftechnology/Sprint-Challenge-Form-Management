@@ -3,12 +3,16 @@ import { Form, Field, withFormik } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
 
-const InputForm = ({ values, errors, touched, status, users, setUsers }) => {
+const InputForm = ({ values, errors, touched, status, foods, setFoods }) => {
 // class TheForm extends React.Component {
 
     useEffect(()=> {
         if (status) {
-            setUsers(users => [...users, status])
+            axios.get('http://localhost:5000/api/restricted/data')
+            .then(res => {
+                console.log('Success', res)
+                setFoods(foods => [...foods, status])
+            })
         }
     }, [status])
 
