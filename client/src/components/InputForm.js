@@ -29,12 +29,12 @@ const InputForm = ({ values, errors, touched, status, setFoods }) => {
         return (
             <Form>
                 <Field type='text' name='username' placeholder='Your name'/>
-                {touched.username && errors.username && <p>{errors.username}</p>}
+                {touched.username && errors.username && <p data-testid="name-err">{errors.username}</p>}
 
                 <Field type='password' name='password' placeholder='Password' />
-                {touched.password && errors.password && <p>{errors.password}</p>}
+                {touched.password && errors.password && <p data-testid="pass-err">{errors.password}</p>}
 
-                <button type='submit'>Submit</button>
+                <button type='submit' className='submit-btn'>Submit</button>
             </Form>
         )
     // }
