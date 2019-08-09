@@ -3,16 +3,17 @@ import { Form, Field, withFormik } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
 
-const InputForm = ({ values, errors, touched, status, foods, setFoods }) => {
+const InputForm = ({ values, errors, touched, status, setFoods }) => {
 // class TheForm extends React.Component {
 
     useEffect(()=> {
         if (status) {
             axios.get('http://localhost:5000/api/restricted/data')
             .then(res => {
-                console.log('Success', res)
-                setFoods(foods => [...foods, status])
+                console.log('GET Success', res)
+                setFoods(res.data)
             })
+            .catch(err => console.log('GET Fail', err))
         }
     }, [status])
 
@@ -61,13 +62,13 @@ const FormikForm = withFormik({
         // fetch('http://localhost:5000/api/register', values)
         axios.post('http://localhost:5000/api/register', values)
         .then(res => {
-            console.log('Success', res)
+            console.log('POST Success', res)
             setStatus(res.data)
             resetForm()
             setSubmitting(false)
         })
         .catch(err => {
-            console.log('Fail', err)
+            console.log('POST Fail', err)
             setSubmitting(false)
         })
     }
