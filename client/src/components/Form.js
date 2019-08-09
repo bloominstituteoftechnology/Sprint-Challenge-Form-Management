@@ -19,9 +19,9 @@ import styled from 'styled-components';
       <FormikForm className='user-form'>
         <label>
           Name:
-          <Field type='text' name='name' />
-          {touched.name && errors.name && (
-            <p className='error'>{errors.name}</p>
+          <Field type='text' name='username' />
+          {touched.username && errors.username && (
+            <p className='error'>{errors.username}</p>
           )}
         </label>
         <label>
@@ -42,7 +42,7 @@ import styled from 'styled-components';
  const FormikUserForm = withFormik({
   mapPropsToValues(values) {
     return {
-      name: values.name || '',
+      username: values.username || '',
       password: values.password || ''
     };
   },
@@ -60,17 +60,30 @@ import styled from 'styled-components';
   }),
   
   handleSubmit(values, { setStatus, resetForm }) {
-    axios.post('http://localhost:5000/api/register', values).then(res => {
-      console.log('POST res: ', res);
-      setStatus(res.data);
+    axios.post("https://localhost:5000/api/register", {
+        username: values.username,
+        password: values.password
+    })
+    .then(response => {
+      console.log('POST res: ', response.data);
+      setStatus(response.data);
+      })
       resetForm();
-    });
-  },
+      axios
+      .get("http://localhost:5000/api/restricted/data")
+      .then(response => {
+      setStatus(response.data);
+      console.log(response.data);
+      })
+      .catch(function(error){
+          console.log('this is trouble', error)
+      });
+  }
 })(Form);
 
  export default FormikUserForm;
 
- const Uform = styled.form`
+ const Uform = styled.div`
  @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
  border: 1px solid white;
  font-family: 'Raleway', sans-serif;
