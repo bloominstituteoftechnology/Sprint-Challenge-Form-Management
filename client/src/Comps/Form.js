@@ -65,4 +65,3 @@ const FormikAppForm = withFormik({
 })(AppForm);
 
 export default FormikAppForm
-
