@@ -5,7 +5,6 @@ const morgan = require("morgan");
 
 const authRoutes = require("./routes/authRoutes");
 const restrictedRoutes = require("./routes/protectedRoutes");
-const errorHandler = require("./middleware");
 
 const server = express();
 
@@ -17,9 +16,7 @@ server.use(morgan("dev"));
 server.use("/api", authRoutes);
 server.use("/api/restricted", restrictedRoutes);
 
-server.use(errorHandler);
-
 const port = 5000;
-server.listen(port, function() {
+server.listen(port, function () {
 	console.log(`\n === Web API Listening on http://localhost:${port}===`);
 });
