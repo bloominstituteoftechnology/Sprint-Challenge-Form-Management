@@ -1,7 +1,36 @@
-.App-link {
-  color: #61dafb;
+
+
+
+/*NavBar*/
+.navbar {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  height: 70px;
+  width: 100%;
+  justify-content: flex-end;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
+
+  .navbar-right {
+      width: 300px;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+       
+      .links {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 1.3rem;
+      }
+  
+
+    
 
 /*Form*/
 .App {
@@ -123,3 +152,4 @@ button.outline {
       text-align: center;
   }
 }
+

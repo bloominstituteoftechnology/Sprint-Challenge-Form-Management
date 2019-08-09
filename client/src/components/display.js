@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card } from 'semantic-ui-react';
 import axios from "axios";
 import 'semantic-ui-css/semantic.min.css';
-import '../App.css';
+import '../styles.css';
 
 
 
