@@ -1,22 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "@testing-library/jest-dom/extend-expect";
-import FormikForm from "./TheForm";
-import { render, fireEvent, getByTestId } from "@testing-library/react";
+import FormikForm from "./Form";
+import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/react/cleanup-after-each";
 
-it("FormikForm renders", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<FormikForm />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
+describe('<FormikForm />', () => {
+    it('renders without crashing', () => {
+      render(<FormikForm />);
+    });
   
    it("submit fires", () => {
     // FormikForm renders..Test
     const { getByText } = render(<FormikForm />);
-  
-  
-     //Click button to see if event fires..Test
+    const submit = getByText(/^submit$/i)
+    
     fireEvent.click(submitButton);
-  
+    getByText(/Submit: 1/)
+    //Click button to see if event fires..Test
+   })
   });
