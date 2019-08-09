@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FormikUserForm from './components/Form';
+import User from './components/User';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+
+     this.state = {
+      users: [],
+    };
+  }
+
+   updateUser = user => {
+    this.setState({ users: [...this.state.users, user] });
+  };
+
+   render() {
+    return (
+      <>
+        <FormikUserForm updateUser={this.updateUser} />
+        {this.state.users.length > 0 &&
+          this.state.users.map(user => {
+            return <User user={user} />;
+          })}
+      </>
+    );
+  }
 }
 
 export default App;
