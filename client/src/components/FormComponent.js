@@ -1,17 +1,23 @@
 import React from 'react';
+import axios from 'axios';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from 'yup';
 
-new class FormComponent extends React.Component {
+
+class FormComponent extends React.Component {
     constructor() {
         super();
+        this.state = {}
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <Form>
                 <Field type="text" name="username" placeholder="Username" />
+                {this.props.touched.email && this.props.errors.email && <p>{this.props.errors.email}</p>}
+
                 <Field type="password" name="password" placeholder="Password" />
+                {this.props.touched.password && this.props.errors.password && <p>{this.props.errors.password}</p>}
                 <button>Submit!</button>
             </Form>
         )
@@ -20,26 +26,34 @@ new class FormComponent extends React.Component {
 const FormikForm = withFormik({
 
     mapPropsToValues({ username, password }) {
-      return {
-        username: username || "",
-        password: password || ""
-      };
+        return {
+            username: username || "",
+            password: password || ""
+        };
     },
 
     validationSchema: Yup.object().shape({
         email: Yup.string()
-          .email()
-          .required('if you dont enter your email, we cant spam you, sooooo... required field.'),
+            .email()
+            .required('if you dont enter your email, we cant spam you, sooooo... required field.'),
         password: Yup.string()
-          .min(8, 'your password is too short, try eight characters or more')
-          .required('did you forget to enter a password?')
-      }),
-  
+            .min(8, 'your password is too short, try eight characters or more')
+            .required('did you forget to enter a password?')
+    }),
+
     handleSubmit(values) {
-      console.log(values)
-     
+        console.log(values)
+        axios
+            .post("http://localhost:5000/api/register", values)
+            .then(res => {
+                console.log(res.data);
+                this.setState(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
-  
+
 })(FormComponent);
 
 export default FormikForm;
