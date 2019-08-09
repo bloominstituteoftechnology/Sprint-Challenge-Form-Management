@@ -49,7 +49,7 @@ let data = [
   },
   {
     name: 'Hush Puppies',
-    couse: 'Side',
+    course: 'Side',
     technique: 'Deep Frying',
     ingredients: ['Corn Meal', 'Sugar', 'Jalapeños', 'Sorghum']
   },
