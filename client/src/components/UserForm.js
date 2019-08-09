@@ -4,10 +4,18 @@ import * as Yup from 'yup';
 import axios from 'axios';
     
 class UserForm extends React.Component {
-
+    // constructor() {
+    //     super();
+        
+    // }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if(!prevProps) {}
+    // }
     render() {
+        // console.log(this.props.status)
         return(
             <div>
+                {/* <p>{this.props.status}</p> */}
                 <Form>
                     <Field data-testid="username"  className='user-input' type='text' name='username' placeholder='Please enter your name' />
                     <Field data-testid="password" className='user-input' type='password' name='password' placeholder='Password' />
@@ -34,13 +42,14 @@ const FormikUserForm = withFormik({
         console.log("form submitted", values);
         axios.post(`http://localhost:5000/api/register`, values)
         .then(res => {
-            console.log('response', res.data.token)
-            setStatus(res.data.message)
+            console.log('response', res.data)
+            setStatus(res.data)
             // console.log(status)
             resetForm();
         })
         .catch(error => {
             console.log('Post Error', error)
+            setStatus(error.message)
         })
     }
 

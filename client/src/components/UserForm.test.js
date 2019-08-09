@@ -12,13 +12,13 @@ describe('<UserForm />', () => {
         })
         it('displays a submit button', () => {
             const {container} = render(<UserForm />)
-            const submit =getByTestId(container, 'submit')
+            const submit = getByTestId(container, 'submit')
             expect(submit.textContent).toBe('Submit')
         })
-        it('logs a response on click', () => {
-            const {container} = render(<UserForm />)
-            const submit = getByTestId(container, 'submit')
-            fireEvent.click(submit);
-            expect()
-        })
+        // it('logs a response on click', () => {
+        //     const {container} = render(<UserForm />)
+        //     const submit = getByTestId(container, 'submit')
+        //     fireEvent.click(submit);
+        //     expect()
+        // })
 })

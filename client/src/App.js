@@ -23,7 +23,7 @@ function App() {
     return (
       <div className="App">
         <UserForm />
-        {foods.map((food, index) => <DisplayFood key={index} food={food}/>)}
+        {foods.map((food, index) => <DisplayFood data-testid={`food${index}`} key={index} food={food}/>)}
         <button data-testid="food-button" onClick={() => clickHandler()}>Click for Recipes</button>
       </div>
     );
