@@ -19,9 +19,7 @@ describe('card.js',  () => {
             expect(add(8)).toBe(8);
         })
     })
+
+    
 });
 
-// describe('app.js', () => {
-//   it('should returnan app with 4 buttons being, balls, strike, hit, and foul. along with corresponding visuals above those buttons to show current value.', () =>{
-//     expect(<App />)
-//   })

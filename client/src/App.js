@@ -4,7 +4,8 @@ import './App.css';
 import FormikAppForm from './Comps/Form'
 import Card from './Comps/Card'
 
-function App() {
+class AppComponent extends React.Component {
+  render() {
   return (
     <div className="App">
       <FormikAppForm />
@@ -12,5 +13,6 @@ function App() {
     </div>
   );
 }
+}
 
-export default App;
+export default AppComponent;

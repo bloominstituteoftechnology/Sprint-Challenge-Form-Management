@@ -15,7 +15,7 @@ const AppForm = ({errors, touched, status, props  }) => {
 
 return (
     <div className="App-Form"> 
-        <h1> Testing </h1>
+        <h1> Form </h1>
             <Form> 
                   <Field type='text' name='username' placeholder='username' />
                  {touched.username && errors.username && (
@@ -30,7 +30,7 @@ return (
 
                  {forms.map(form => (
                  <p key={form.id}>
-                 Email: {form.username}
+                 Username: {form.username}
                  <br/>
                  Password: {form.password}
                  </p>
