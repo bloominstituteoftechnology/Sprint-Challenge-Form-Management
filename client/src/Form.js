@@ -16,8 +16,8 @@ function RegForm({ values, errors, touched }) {
         )}
         <Field type="password" name="password" placeholder="Password" />
       </div>
-      <div>
-        <h4>Where do you live?</h4>
+      <div className="home">
+        <h3>Where do you live?</h3>
         <Field component="select" name="home">
           <option value="usa">USA</option>
           <option value="canada">Canada</option>
