@@ -1,7 +1,6 @@
 import React from 'react';
 
 function DisplayFood({food}) {
-   console.log(food)
     return (
         <div>
             <h2>{food.name}</h2>
