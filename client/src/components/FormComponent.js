@@ -12,7 +12,7 @@ class FormComponent extends React.Component {
             results: null,
         }
     }
-    theOtherSubmitHandler = () => {
+  theOtherSubmitHandler = () => {
         axios
                 .get("http://localhost:5000/api/restricted/data")
                 .then(res => {
@@ -37,7 +37,7 @@ class FormComponent extends React.Component {
 
             {this.state.results? this.state.results.map(item => {
             return( 
-                     <div key={item.name}>
+                     <div key={item.name} data-testid='something'>
                         <p>{item.name}</p>
                      </div>
                     )
@@ -88,5 +88,6 @@ const FormikForm = withFormik({
     }
 
 })(FormComponent);
+
 
 export default FormikForm;

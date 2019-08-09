@@ -1,6 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import * as rtl from '@testing-library/react';
-import 'jest-dom/extend-expect';
 import App from './App';
 
 afterEach(rtl.cleanup);
@@ -10,5 +10,13 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 }),
-it('contains a div with data-')
-;
+it('contains a div with data-testid=something', () => {
+  const wrapper = rtl.render(<App/>);
+  wrapper.findAllByTestId('something');
+}),
+it('works when clicked', () => {
+  const wrapper = rtl.render(<App/>);
+  const button = wrapper.getByText(/submit!/i);
+  rtl.fireEvent.click(button);
+})
+
