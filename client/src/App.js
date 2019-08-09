@@ -10,11 +10,13 @@ function App() {
   const [token, setToken] = useState("");
   return (
     <div className="App">
+      <>
     <Navbar />
-      <Route exact path='/' render={(props) => <FormikRegisterForm {...props} setToken={setToken} text="Register Form" />} />
+     <Route exact path='/' render={(props) => <FormikRegisterForm {...props} setToken={setToken} text="Register Form" />} />
       <Route exact path='/login' render={(props) => <FormikLoginForm {...props} setToken={setToken} text="Login Form" />} />
       <Route exact path='/display' render={(props) => <Display {...props} token={token} />} />
-      </div>
+      </>
+    </div>
   );
 }
 

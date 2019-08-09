@@ -33,10 +33,11 @@ function Display({ token }) {
                     <Card>
                         <Card.Content>
                             <Card.Header>{item.name}</Card.Header>
-                            <Card.Meta>{item.course}</Card.Meta>
+                            <Card.Meta>{`Course: ${item.course || 'N/A'}`}</Card.Meta>
                             <Card.Meta>{`Technique: ${item.technique || 'N/A'}`}</Card.Meta>
                         </Card.Content>
                     </Card>)
+                   
             })}
         </div>
     )

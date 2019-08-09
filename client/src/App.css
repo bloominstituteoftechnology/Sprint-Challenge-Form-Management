@@ -1,13 +1,12 @@
 
 
-
 /*NavBar*/
 .navbar {
   display: flex;
   flex-direction: row;
   background: black;
   height: 70px;
-  width: 100%;
+  /* width: 100%; */
   justify-content: flex-end;
   align-items: center;
   font-family: 'Roboto', sans-serif;
@@ -20,7 +19,7 @@
       flex-direction: row;
       align-items: center;
   }
-       
+
       .links {
         color: white;
         font-family: 'Roboto', sans-serif;
@@ -28,7 +27,7 @@
         padding: 20px;
         font-size: 1.3rem;
       }
-  
+
 
     
 
