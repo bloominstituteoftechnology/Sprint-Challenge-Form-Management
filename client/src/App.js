@@ -51,4 +51,12 @@ text-align: center;
 font-family: 'Raleway', sans-serif;
 font-size: 1.5rem;
 color: white;
+
+.user-cards{
+  border: 1px solid white;
+  margin-top: 1%;
+  width: 500px;
+  margin: 0 auto;
+  background-color: #DB5EFF;
+}
 `
