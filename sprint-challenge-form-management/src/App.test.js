@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import { render, fireEvent } from '@testing-library/react';
+
+import 'jest-dom/extend-expect';
 import'@testing-library/react/cleanup-after-each';
 
 describe ('App.js file', () => {
