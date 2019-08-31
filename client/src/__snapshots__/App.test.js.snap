@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <h1>
+      Register
+    </h1>
+    <form
+      class="ui form"
+    >
+      <div
+        class="field"
+      >
+        <label
+          id="lableOne"
+        >
+          UserName
+        </label>
+        <input
+          name="username"
+          placeholder="UserName"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <label
+          id="lableThree"
+        >
+          Password
+        </label>
+        <input
+          name="password"
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="ui checkbox"
+        >
+          <input
+            name="check"
+            tabindex="0"
+            type="checkbox"
+            value=""
+          />
+          <label
+            id="lableFour"
+          >
+            I agree to the Terms and Conditions
+          </label>
+        </div>
+      </div>
+      <button
+        class="ui button"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
