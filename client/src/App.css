@@ -1,0 +1,89 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Lato;
+  background-color: #4e4eb0;
+  border-radius: 10px;
+  margin: 50px;
+  width: 50%;
+  height: 650px;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.error {
+  color: #f533f6;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: #ebdef0;
+  font-style: italic;
+}
+
+div {
+  padding: 10px;
+}
+
+input {
+  line-height: 1.4rem;
+  width: 200px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+input.terms {
+  width: 20px;
+}
+
+div.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+select {
+  font-size: 1rem;
+  padding: 20px 0;
+}
+
+label {
+  color: white;
+}
+
+button {
+  width: 40%;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 0 40px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
