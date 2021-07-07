@@ -1,0 +1,13 @@
+// Questions
+
+// Class definition, extends and the React.Component
+// Along with render are three lifecycles.
+
+// Render, componentdidmount, and componentdidupdate
+
+// Forms are still the most common way to acquire user input data.
+
+// Forms can be complex formik streamlines the code.
+
+
+// We test our apps so we can make sure that the User experience is what we want it to be, and also so if we ever need to go back and change code we can follow the tests to see if it breaks.
